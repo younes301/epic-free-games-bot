@@ -1,8 +1,8 @@
 name: Epic Games Notifier
 on:
   schedule:
-    - cron: '1 16 * * 4' # يشتغل كل خميس الساعة 18:00 بتوقيت الجزائر (تقريباً)
-  workflow_dispatch: # يخليك تقدر تشغله يدوياً باش تجربه درك
+    - cron: '1 16 * * 4'
+  workflow_dispatch:
 
 jobs:
   run-bot:
