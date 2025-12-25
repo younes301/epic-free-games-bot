@@ -1,0 +1,25 @@
+name: Epic Games Notifier
+on:
+  schedule:
+    - cron: '0 18 * * 4' # يشتغل كل خميس الساعة 18:00 بتوقيت الجزائر (تقريباً)
+  workflow_dispatch: # يخليك تقدر تشغله يدوياً باش تجربه درك
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Script
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python main.py
