@@ -1,7 +1,7 @@
 name: Epic Games Notifier
 on:
   schedule:
-    - cron: '1 16 * * 4'
+    - cron: '1 16 * * *' # يشتغل يومياً الساعة 17:01 بتوقيت الجزائر
   workflow_dispatch:
 
 jobs:
